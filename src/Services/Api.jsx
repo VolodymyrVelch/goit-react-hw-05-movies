@@ -16,32 +16,28 @@ export async function getMoviesInfo(movie_id) {
     const response = await axios.get(searchParams)
     return response.data
 }
+export async function getRewiews(movie_id) {
+    const searchParams = `/movie/${movie_id}/reviews?api_key=${API_KEY}`
+    const response = await axios.get(searchParams)
+    return response.data
+}
+
+export async function getCast(movie_id) {
+    const searchParams = `/movie/${movie_id}/credits?api_key=${API_KEY}`
+    const response = await axios.get(searchParams)
+    return response.data
+}
+
+export async function getSearch() {
+    const searchParams = `/search/movie?api_key=${API_KEY}`
+    const response = await axios.get(searchParams)
+    return response.data
+}
 
 
 
 
 
-// const PIXABAY_KEY = '29209945-1fb6dc06427a139c565976a83';
-// axios.defaults.baseURL = `https://pixabay.com/api`;
-
-// export const getImages = async (query, perPage, page = 1) => {
-//   const searchParams = new URLSearchParams({
-//     key: PIXABAY_KEY,
-//     q: query,
-//     image_type: 'photo',
-//     orientation: 'horizontal',
-//     safesearch: true,
-//     page: page,
-//     per_page: perPage,
-//   });
-//   const response = await axios.get(`?${searchParams}`);
-//   return response.data;
-// };
 
 
-// https://api.themoviedb.org/3/trending/all/day?api_key=<<api_key>>
 
-//   createRequest.propType={
-//     search: PropTypes.string.isRequired,
-//     page: PropTypes.number.isRequired,
-// }

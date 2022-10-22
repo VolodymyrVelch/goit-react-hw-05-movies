@@ -1,6 +1,6 @@
-import { getTrendingMovies } from '../Services/Api'
+import { getTrendingMovies } from '../../Services/Api'
 import { useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
+import {FilmList, List, LinkStyle } from './Home.styled';
 // import { Movies } from 'pages/Movies';
 // import { Link } from 'react-router-dom';
 
@@ -16,14 +16,14 @@ import { Link } from 'react-router-dom';
             }
         getTrending()
     }, []);
-    // console.log(data)
+  
     return (
     <div>
         <h1>Tranding today</h1>
-        <ul>
-                {data.map(movie => (<li key={movie.id}>
-                    <Link to={`/movies/${movie.id}`}>{movie.title}</Link></li>))}  
-        </ul>
+        <FilmList>
+                {data.map(movie => (<List key={movie.id}>
+                    <LinkStyle to={`/movies/${movie.id}`}>{movie.title}</LinkStyle></List>))}  
+        </FilmList>
     </div>
     )
 }
