@@ -1,13 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMoviesInfo } from "Services/Api";
 import { Outlet } from "react-router-dom";
-import { Wrapper,Thumb, Poster, Genre, AdditionalInfo } from "./MovieDetails.styled";
+import BackLink from "components/BackLink/BackLink";
+import { Wrapper, Thumb, Poster, Genre, AdditionalInfo } from "./MovieDetails.styled";
 
 const MoviesDeatils = () => {
-    const {id} = useParams()
+    const { id } = useParams()
     const [movie, setMovie] = useState('');
-    
+    const location = useLocation();
+    const backLinkHref = location.state?.from ?? "/Movies";
+
     useEffect(() => {
         const getMovie = async () => {
             try {
@@ -21,7 +24,8 @@ const MoviesDeatils = () => {
     
   
     
-    return<>
+    return <>
+    <BackLink to={backLinkHref}>Back to movie</BackLink>
     <Wrapper>
         <Poster src={movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`:'https://via.placeholder.com/300x400'} alt={`${movie.title} poster` } />
         <Thumb>

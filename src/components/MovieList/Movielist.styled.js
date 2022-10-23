@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const FilmList = styled.ul`
+  list-style: none;
+`;
+
 export const LinkStyle = styled(Link)`
   color: black;
   text-decoration: none;

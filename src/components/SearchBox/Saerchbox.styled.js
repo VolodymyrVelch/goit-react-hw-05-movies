@@ -3,9 +3,11 @@ import search from '../images/search.png';
 
 export const SearchFormButton = styled.button`
   display: inline - block;
-  width: 48px;
-  height: 48px;
+  width: 45px;
+  height: 40px;
   border: 0;
+  border-radius: 50%;
+  margin-left: 5px;
   background-image: url(${search});
   background-size: 40%;
   background-repeat: no-repeat;
@@ -16,6 +18,7 @@ export const SearchFormButton = styled.button`
   outline: none;
   :hover {
     opacity: 1;
+    border: 1px solid orange;
   }
 `;
 
@@ -24,6 +27,7 @@ export const Input = styled.input`
   width: 100%;
   font: inherit;
   font-size: 20px;
+  height: 40px;
   border: 1px solid grey;
   border-radius: 5px;
   outline: none;
@@ -33,12 +37,16 @@ export const Input = styled.input`
     font: inherit;
     font-size: 18px;
   }
+  :hover,
+  :focus {
+    border: 1px solid orange;
+  }
 `;
 export const Form = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;

@@ -1,8 +1,7 @@
 import { getTrendingMovies } from '../../Services/Api'
 import { useEffect, useState} from 'react';
-import {FilmList, List, LinkStyle } from './Home.styled';
-// import { Movies } from 'pages/Movies';
-// import { Link } from 'react-router-dom';
+import MovieList from 'components/MovieList/MovieList';
+
 
  const Home = () => {
     const [data, setData] = useState([]);
@@ -19,11 +18,8 @@ import {FilmList, List, LinkStyle } from './Home.styled';
   
     return (
     <div>
-        <h1>Tranding today</h1>
-        <FilmList>
-                {data.map(movie => (<List key={movie.id}>
-                    <LinkStyle to={`/movies/${movie.id}`}>{movie.title}</LinkStyle></List>))}  
-        </FilmList>
+            <h1>Tranding today</h1>
+            <MovieList data={data} />
     </div>
     )
 }

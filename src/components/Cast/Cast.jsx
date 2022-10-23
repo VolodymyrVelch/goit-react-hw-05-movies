@@ -12,8 +12,6 @@ const Cast = () => {
             try {
                 const credits = await getCast(id);
                 const castData = credits.cast
-                console.log(castData)
-
                 setCast(castData)
             }
             catch (error) {console.log(error) }
