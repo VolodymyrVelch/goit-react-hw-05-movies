@@ -12,6 +12,7 @@ import MoviesDeatils from "pages/MovieDetails/MovieDeatails";
 export const App = () => {
   return (
     <Main>
+      <h1>World</h1>
       <Routes>
         <Route path="/" element={<SharedLayaut/>}>
           <Route index element={<Home/> } />

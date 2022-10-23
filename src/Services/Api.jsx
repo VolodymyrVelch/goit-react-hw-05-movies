@@ -28,11 +28,11 @@ export async function getCast(movie_id) {
     return response.data
 }
 
-export async function getSearch() {
-    const searchParams = `/search/movie?api_key=${API_KEY}`
-    const response = await axios.get(searchParams)
-    return response.data
-}
+// export async function getSearch() {
+//     const searchParams = `/search/movie?api_key=${API_KEY}`
+//     const response = await axios.get(searchParams)
+//     return response.data
+// }
 
 
 
