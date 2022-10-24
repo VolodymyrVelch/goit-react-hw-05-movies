@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { getCast } from "Services/Api"
-import { Poster } from "./Cast.styled";
+import { Poster, CastList, CastItem } from "./Cast.styled";
 
 const Cast = () => {
     const { id } = useParams()
@@ -20,16 +20,17 @@ const Cast = () => {
     }, [id]);
     
     return <>
-            <ul>
+            <CastList>
                 {cast.map(({ name, character, id, profile_path}) =>
-                    <li key={id}>
-                        <Poster src={profile_path?`https://image.tmdb.org/t/p/w500/${profile_path}`:'https://via.placeholder.com/100x200'} alt={`${name}'s poster`} />
+                    <CastItem key={id}>
+                        <Poster src={profile_path?`https://image.tmdb.org/t/p/w500/${profile_path}`:'https://via.placeholder.com/100x150'} alt={`${name}'s poster`} />
                         <h5>{name}</h5>
                         <p>{character}</p>
-                    </li>
+                    </CastItem>
                 )}
-            </ul>
+            </CastList>
     </>
 }
+
 
 export default Cast

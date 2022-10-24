@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { getRewiews } from "Services/Api"
+import { ReviewList,ReviewItem,ReviewAuthor,ReviewCont } from './Reviews.styled';
 
 
 const Reviews = () => {
@@ -21,17 +23,20 @@ const Reviews = () => {
 
     return <>
         {rew.length>0?
-            (<ul>
+            (<ReviewList>
                 {(rew.map(({ author, content }, index) =>
-                    <li key={index}>
-                        <h5>{author}</h5>
-                        <p>{content}</p>
-                    </li>
+                    <ReviewItem key={index}>
+                        <ReviewAuthor>{author}</ReviewAuthor>
+                        <ReviewCont>{content}</ReviewCont>
+                    </ReviewItem>
                 ))}
-            </ul>):
+            </ReviewList>):
             (<p>We don't have any reviews for this movie</p>)
         }
     </>
+}
+Reviews.propTypes = {
+    id: PropTypes.object,
 }
 
 export default Reviews

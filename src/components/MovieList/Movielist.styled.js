@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 
 export const FilmList = styled.ul`
   list-style: none;
+  padding: 0px;
+`;
+
+export const ListComponents = styled.li`
+  padding: 5px;
+  margin-left: 5px;
 `;
 
 export const LinkStyle = styled(Link)`
@@ -14,7 +20,7 @@ export const LinkStyle = styled(Link)`
 
   :hover,
   :focus-visible {
-    color: #d97c20;
+    color: orange;
     transition: all 200ms ease;
   }
 `;

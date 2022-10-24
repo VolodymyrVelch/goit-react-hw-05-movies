@@ -1,4 +1,5 @@
-import {Form, SearchFormButton, Input } from "./Saerchbox.styled"
+import PropTypes from 'prop-types'
+import { Form, SearchFormButton, Input } from "./Saerchbox.styled"
 
 export const SearchBox = ({onSubmit}) => {
     return <Form  onSubmit={onSubmit}>
@@ -12,4 +13,8 @@ export const SearchBox = ({onSubmit}) => {
             />
             <SearchFormButton type="submit"/>
             </Form>
+}
+
+SearchBox.propTypes = {
+  to: PropTypes.string,
 }

@@ -10,7 +10,11 @@ export const LinkStyle = styled(Link)`
 
   :hover,
   :focus-visible {
-    color: #d97c20;
+    color: orange;
     transition: all 200ms ease;
   }
+`;
+
+export const Title = styled.h1`
+  padding: 5px;
 `;

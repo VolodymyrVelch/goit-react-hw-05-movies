@@ -2,6 +2,7 @@ import { SearchBox } from "components/SearchBox/SearchBox"
 import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom";
 import { getSearch } from '../Services/Api'
+import Notiflix from "notiflix";
 import MovieList from "components/MovieList/MovieList";
 
 
@@ -31,7 +32,7 @@ const Movies = () => {
         e.preventDefault();
         const searchParams = e.target.elements.query.value
         if (searchParams.trim() === '') {
-            alert('input')
+            Notiflix.Notify.warning('Please type your request')
         }
         setSearchParams({query:searchParams})
     }

@@ -1,16 +1,19 @@
-import { Main} from "./App.styled";
+import { lazy, Suspense } from "react";
+import { Main,FallBack } from "./App.styled";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import Cast from "./Cast/Cast";
-import Reviews from "./Rewiews/Rewiews";
-import SharedLayaut from "./SharedLayout/SharedLayout";
-import  Movies  from "pages/Movies";
-import NotFound from "pages/NotFound";
-import MoviesDeatils from "pages/MovieDetails/MovieDeatails";
+
+const SharedLayaut= lazy(() => import( "./SharedLayout/SharedLayout"));
+const Home = lazy(() => import('../pages/Home/Home'));
+const Cast = lazy(() => import("./Cast/Cast"));
+const Reviews = lazy(() => import("./Rewiews/Rewiews"));
+const Movies  = lazy(() => import( "../pages/Movies"));
+const NotFound =lazy(() => import( "../pages/NotFound"));
+const MoviesDeatils = lazy(() => import( "../pages/MovieDetails/MovieDeatails"));
 
 
 export const App = () => {
   return (
+  <Suspense fallback={<FallBack>Loading ...</FallBack>}>
     <Main>
       <Routes>
         <Route path="/" element={<SharedLayaut/>}>
@@ -25,5 +28,6 @@ export const App = () => {
         </Route>
       </Routes>
     </Main>
+  </Suspense>
   );
 };

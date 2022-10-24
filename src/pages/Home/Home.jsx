@@ -1,6 +1,7 @@
 import { getTrendingMovies } from '../../Services/Api'
 import { useEffect, useState} from 'react';
 import MovieList from 'components/MovieList/MovieList';
+import { Title } from './Home.styled';
 
 
  const Home = () => {
@@ -18,7 +19,7 @@ import MovieList from 'components/MovieList/MovieList';
   
     return (
     <div>
-            <h1>Tranding today</h1>
+            <Title>Tranding today</Title>
             <MovieList data={data} />
     </div>
     )
