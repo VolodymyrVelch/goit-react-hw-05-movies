@@ -7,7 +7,7 @@ const SharedLayaut = () => {
     <NavBox>
       <Nav>
         <StyledNavLink to='/' end>Home</StyledNavLink>
-        <StyledNavLink to='/Movies'>Movies</StyledNavLink>
+        <StyledNavLink to='/movies'>Movies</StyledNavLink>
      </Nav>
 
     </NavBox>

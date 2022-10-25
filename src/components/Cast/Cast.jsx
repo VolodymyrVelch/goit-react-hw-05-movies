@@ -8,7 +8,7 @@ const Cast = () => {
     const [cast, setCast] = useState([]);
 
     useEffect(() => {
-            const Cast = async () => {
+            const getMovieCast = async () => {
             try {
                 const credits = await getCast(id);
                 const castData = credits.cast
@@ -16,7 +16,7 @@ const Cast = () => {
             }
             catch (error) {console.log(error) }
         }
-        Cast()
+        getMovieCast()
     }, [id]);
     
     return <>
