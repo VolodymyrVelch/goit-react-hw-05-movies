@@ -12,6 +12,7 @@ const MoviesDeatils = () => {
     const [movie, setMovie] = useState('');
     const location = useLocation();
     const backLinkHref = location.state?.from ?? "/Movies";
+    const { poster_path, title } = movie;
 
     useEffect(() => {
         const getMovie = async () => {
@@ -24,12 +25,11 @@ const MoviesDeatils = () => {
        getMovie()
     }, [id]);
     
-  
     
     return <>
     <BackLink to={backLinkHref}>Back to movie</BackLink>
     <Wrapper>
-        <Poster src={movie.poster_path? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`:'https://via.placeholder.com/300x400'} alt={`${movie.title} poster` } />
+        <Poster src={poster_path? `https://image.tmdb.org/t/p/w500/${poster_path}`:'https://via.placeholder.com/300x400'} alt={`${title} poster` } />
         <Thumb>
         <Title>{movie.title}</Title>
         <p>User score: {movie.vote_average/10*100 }%</p>
